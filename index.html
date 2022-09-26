@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./src/style.css">
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <section class="container">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="449">
+      <path fill="#F1F5FE" fill-rule="evenodd" d="M0 0h1440v449H191.5C85.737 449 0 363.263 0 257.5V0z" />
+    </svg> -->
+    <div class="title-container">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="146" height="145" class="circles"> -->
+      <g fill="none" fill-rule="evenodd" stroke="#858fad">
+        <circle cx="63" cy="82" r="62.5" />
+        <circle cx="105" cy="41" r="40.5" />
+      </g>
+      </svg>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. <br>No credit card required.</p>
+    </div>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <div class="pageviews-container">
+      <div class="slidecontainer">
+        <p class="views"><span id="views">100k</span> Pageviews</p>
+        <input type="range" min="1" max="30" value="16" class="slider" id="myRange">
+        <p><span id="price"></span> / month</p>
+      </div>
 
-  Pageviews
-  $ /month
+      <div class="billing-container">
+        <p>Monthly Billing</p>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="round"></span>
+        </label>
+        <p>Yearly Billing <span>-25%</span></p>
+      </div>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+      <hr>
+      <div class="checklist-container">
+        <div class="checklist">
+          <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+              <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+            </svg>Unlimited websites</p>
+        </div>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+        <div class="checklist">
+          <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+              <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+            </svg>100% data ownership</p>
+        </div>
 
-  Start my trial
-  
+        <div class="checklist">
+          <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+              <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+            </svg>Email reports</p>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button>Start my trial</button>
+      </div>
+
+    </div>
+  </section>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/jsuleyka" target="_blank">Suleyka Juarez</a>.</p>
   </div>
+
+  <script type="text/javascript" src="./src/main.js"></script>
 </body>
+
 </html>
