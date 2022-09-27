@@ -1,9 +1,9 @@
 let slider = document.getElementById("myRange");
 let output = document.getElementById("price");
 let outputViews = document.getElementById("views");
-output.innerHTML = '$' + slider.value;
+output.innerHTML = '$' + parseFloat(slider.value).toFixed(2);
 
 slider.oninput = function() {
-  output.innerHTML = '$' + this.value;
+  output.innerHTML = '$' + parseFloat(this.value).toFixed(2);
   // outputViews.innerHTML = 
 }
