@@ -33,21 +33,13 @@ p {
     text-align: center;
 }
 
-.title-container svg {
-    position: relative;
-}
-
 .title-container p {
     line-height: 23px;
 }
 
-.title-container svg.circles {
-    position: absolute;
-}
-
-.pageviews-container, .checklist-container {
+.pageviews-container, .bottom {
     background-color: hsl(0, 0%, 100%);
-    box-shadow: 2px 13px 10px 5px rgba(0, 0, 0, 5%);
+    box-shadow: 0px 30px 10px 5px rgba(0, 0, 0, 5%);
     padding: 25px;
     width: 300px;
 }
@@ -64,14 +56,31 @@ p {
     text-transform: uppercase;
 }
 
-.pageviews-container p #price {
+.pageviews-container p.price.visible-xs {
+    margin-top: 25px;
+    position: absolute;
+    right: 65px;
+}
+
+.pageviews-container p #price-xs {
+    position: absolute;
+    right: 50px;
+    top: -15px;
+}
+
+.pageviews-container p #price-xs, .pageviews-container p #price-lg {
     color: black;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 800;
+    margin-right: 5px;
+}
+
+.pageviews-container .visible-lg {
+    display: none;
 }
 
 .slidecontainer {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     position: relative;
     width: 100%;
 }
@@ -82,7 +91,8 @@ p {
     height: 8px;
     border-radius: 5px;
     background: hsl(224, 65%, 95%);
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    margin: 20px 0 30px;
     outline: none;
 }
 
@@ -93,21 +103,22 @@ p {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
     background: url('../images/icon-slider.png') hsl(174, 86%, 45%) no-repeat center center;
+    border-radius: 50%;
     box-shadow: 0px 13px 20px 6px rgb(16 213 194 / 50%);
     cursor: pointer;
+    height: 30px;
+    padding: 20px;
+    width: 30px;
 }
 
 .slider::-moz-range-thumb {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
     background: url('../images/icon-slider.png') hsl(174, 86%, 45%) no-repeat center center;
-    background-repeat: repeat-x;
+    border-radius: 50%;
     cursor: pointer;
+    height: 30px;
+    padding: 10px;
+    width: 30px;
 }
 
 .slider::-webkit-slider-thumb:hover,
@@ -121,6 +132,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: end;
+    margin-bottom: 5px;
+    margin-right: -15px;
 }
 
 .billing-container p {
@@ -133,7 +146,16 @@ p {
     color: hsl(15, 100%, 70%);
     font-size: 10px;
     font-weight: 800;
+    margin-left: 3px;
     padding: 2px 8px;
+}
+
+.billing-container p.visible-xs {
+    display: block;
+}
+
+.billing-container p.visible-lg{
+    display: none;
 }
 
 .switch {
@@ -141,7 +163,7 @@ p {
     display: inline-block;
     height: 22px;
     margin: 0 15px;
-    width: 40px;
+    width: 45px;
 }
 
 .switch input {
@@ -183,9 +205,9 @@ input:checked+.round {
 }
 
 input:checked+.round:before {
-    -webkit-transform: translateX(18px);
-    -ms-transform: translateX(18px);
-    transform: translateX(18px);
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
 }
 
 .round {
@@ -196,10 +218,11 @@ input:checked+.round:before {
     border-radius: 50%;
 }
 
-.checklist-container {
+.bottom {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     border-top: 1px solid hsl(226, 68%, 95%);
+    box-shadow: 0px 10px 10px 5px rgb(0 0 0 / 5%);
     padding-bottom: 30px;
 }
 
@@ -245,7 +268,7 @@ input:checked+.round:before {
 
 .attribution {
     background-color: hsl(227, 35%, 25%);
-    margin-top: 100px;
+    margin-top: 200px;
     padding: 10px 0;
     text-align: center;
     width: 100%;
@@ -266,4 +289,97 @@ input:checked+.round:before {
 .attribution p a:focus,
 .attribution p a:visited {
     text-decoration: underline;
+}
+
+@media (min-width: 1440px) {
+    .title-container {
+        padding: 65px 0 70px;
+    }
+    
+    .title-container h1 {
+        font-size: 30px;
+    }
+
+    .title-container p {
+        font-size: 14px;
+    }
+
+    .title-container p br{
+        display: none;
+    }
+
+    .pageviews-container, .bottom {
+        box-shadow: 0px 5px 10px 10px rgb(0 0 0 / 5%);
+        padding: 30px 40px;
+        width: 450px;
+    }
+
+    .pageviews-container .visible-xs {
+        display: none;
+    }
+
+    .pageviews-container div.visible-lg {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .pageviews-container .views {
+        font-size: 14px;
+    }
+
+    .pageviews-container div.visible-lg p {
+        font-size: 14px;
+    }
+
+    .pageviews-container p #price-lg {
+        font-size: 36px;
+    }
+
+    .slidecontainer {
+        margin-bottom: 15px;
+    }
+    .billing-container {
+        margin-right: 20px;
+    }
+
+    .billing-container p {
+        font-size: 14px;
+    }
+
+    .billing-container p span {
+        font-size: 12px;
+    }
+
+    .billing-container p.visible-xs {
+        display: none;
+    }
+
+    .billing-container p.visible-lg {
+        display: block;
+    }
+    
+    .bottom {
+        box-shadow: 0px 12px 10px 10px rgb(0 0 0 / 5%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .checklist-container .checklist {
+        justify-content: left;
+    }
+
+    .checklist-container .checklist p {
+        font-size: 14px;
+    }
+
+    .btn-container {
+        margin: 0;
+    }
+    
+    .btn-container button {
+        font-size: 14px;
+        width: 165px;
+    }
 }
