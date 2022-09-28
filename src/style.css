@@ -2,6 +2,7 @@
 
 body {
     background: url('../images/bg-pattern.svg') white no-repeat left -70px;
+    /* background-size: contain; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -292,6 +293,10 @@ input:checked+.round:before {
 }
 
 @media (min-width: 1440px) {
+    body {
+        background-size: contain;
+    }
+
     .title-container {
         padding: 65px 0 70px;
     }
@@ -334,13 +339,16 @@ input:checked+.round:before {
 
     .pageviews-container p #price-lg {
         font-size: 36px;
+        position: absolute;
+        right: 55px;
+        top: -2px;
     }
 
     .slidecontainer {
         margin-bottom: 15px;
     }
     .billing-container {
-        margin-right: 20px;
+        margin-right: 15px;
     }
 
     .billing-container p {
@@ -348,7 +356,8 @@ input:checked+.round:before {
     }
 
     .billing-container p span {
-        font-size: 12px;
+        font-size: 11px;
+        margin-left: 8px;
     }
 
     .billing-container p.visible-xs {

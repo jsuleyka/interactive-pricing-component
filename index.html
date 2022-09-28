@@ -25,14 +25,14 @@
           <p class="views"><span id="views">100k</span> Pageviews</p>
           <p><span id="price-lg"></span> / month</p>
         </div>
-        <input type="range" min="1" max="36" value="16" class="slider" id="myRange">
+        <input type="range" min="0" max="36" step="4" value="16" class="slider" id="myRange">
         <p class="price visible-xs"><span id="price-xs"></span> / month</p>
       </div>
 
       <div class="billing-container">
         <p>Monthly Billing</p>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" defaultValue="false" id="check">
           <span class="round"></span>
         </label>
         <p class="visible-xs">Yearly Billing <span>-25%</span></p>
