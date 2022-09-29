@@ -334,19 +334,24 @@ input:checked+.round:before {
     }
 
     .pageviews-container div.visible-lg p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .pageviews-container p #price-lg {
-        font-size: 36px;
+        font-size: 40px;
         position: absolute;
-        right: 55px;
-        top: -2px;
+        right: 65px;
+        top: -1px;
     }
 
     .slidecontainer {
         margin-bottom: 15px;
     }
+
+    .slider {
+        margin-top: 45px;
+    }
+
     .billing-container {
         margin-right: 15px;
     }

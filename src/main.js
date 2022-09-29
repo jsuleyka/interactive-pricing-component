@@ -1,31 +1,37 @@
-let slider = document.getElementById("myRange"), valSlider = slider.value ;
-let output = document.getElementById("price-xs");
-let output2 = document.getElementById("price-lg");
-let outputViews = document.getElementById("views");
-let inputCheck = document.getElementById("check"), isChecked = false, discount = 0;
+import {valStep, discount} from './data.js';
 
-output.innerHTML = '$' + parseFloat(valSlider).toFixed(2);
-output2.innerHTML = '$' + parseFloat(valSlider).toFixed(2);
-console.log(isChecked);
+let slider = document.getElementById("myRange");
+let outputPriceXs = document.getElementById("price-xs");
+let outputPriceLg = document.getElementById("price-lg");
+let outputViews = document.getElementById("views");
+let inputCheck = document.getElementById("check"), isChecked = false, applyDiscount = 0;
+let keys = [], views = [];
+
+valStep.forEach(item => {
+	keys.push(Object.keys(item));
+  views.push(Object.values(item));
+});
+
+outputPriceXs.innerHTML = '$' + parseFloat(keys[3]).toFixed(2);
+outputPriceLg.innerHTML = '$' + parseFloat(keys[3]).toFixed(2);
 
 inputCheck.addEventListener("click", (e) => {
   isChecked = inputCheck.checked;
-  console.log(isChecked);
 });
 
-slider.oninput = function() {
-  let newVal = this.value;
-  discount = newVal - ((25 / 100) * newVal);
-  console.log(discount);
+slider.oninput = function(){
+  const valueSlider = keys.flat();
+  // let sliderStep = valStep[this.value];
+  let sliderStep = valueSlider[this.value];
+
+  applyDiscount = sliderStep - ((discount[0] / 100) * sliderStep);
 
   if (isChecked === true) {
-    console.log("Check true");
-    output.innerHTML = '$' + parseFloat(discount).toFixed(2);
-    output2.innerHTML = '$' + parseFloat(discount).toFixed(2);
+    outputPriceXs.innerHTML = '$' + parseFloat(applyDiscount).toFixed(2);
+    outputPriceLg.innerHTML = '$' + parseFloat(applyDiscount).toFixed(2);
   } else {
-    output.innerHTML = '$' + parseFloat(newVal).toFixed(2);
-    output2.innerHTML = '$' + parseFloat(newVal).toFixed(2);
-  // outputViews.innerHTML = 
+    outputPriceXs.innerHTML = '$' + parseFloat(sliderStep).toFixed(2);
+    outputPriceLg.innerHTML = '$' + parseFloat(sliderStep).toFixed(2);
   }
-  
+  outputViews.innerHTML = views[this.value];
 }
